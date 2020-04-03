@@ -3,4 +3,3 @@ Flask-Session
 psycopg2-binary
 SQLAlchemy
 flask-bcrypt
-Werkzeug==0.14.1
