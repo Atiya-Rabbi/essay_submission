@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>essay</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../static/cascadenstyle.css">
+</head>
+<body>
+	<div id="topdiv0">
+		<div class="card bg-dark text-white">
+	  		<img id="img0" src="../static/loginimg0.jpg" class="card-img" alt="...">
+	  		<div class="card-img-overlay">
+	  			<h5 class="card-title">Login at Essay Submission's place</h5>
+	  			<form class="px-4 py-3" method="POST" action="{{ url_for('login')}}">
+				    <div class="form-group">
+				      <label for="username">Username</label>
+				      <input type="text" required="required" class="form-control" name="username" placeholder="bob">
+				    </div>
+				    <div class="form-group">User role
+				    	<select class="form-control" name="userrole">
+				    		<option value="student">Student</option>
+				    		<option value="teacher">Teacher</option>
+				    	</select>
+				    </div>
+				    <div class="form-group">
+				      <label for="password">Password</label>
+				      <input type="password" required="required" class="form-control" name="password" placeholder="Password">
+				    </div>
+				    <button type="submit" class="btn btn-primary">Sign in</button>
+				</form>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{{ url_for('signup') }}">New around here? Sign up</a>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    viewlist
+{% endblock %}
+
+{% block body %}
+	<a class="dropdown-item" href="{{ url_for('teacher') }}">Back</a>
+	<div class="dropdown-divider"></div>
+    <h1>View List</h1>
+    {% for row in rows %}
+	    <ul>
+	    	<li>{{ row }}</li>
+	    </ul>
+	{% endfor %}
+    
+{% endblock %}

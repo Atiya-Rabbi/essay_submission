@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Teacher
+{% endblock %}
+
+{% block body %}
+    <h1>Teacher's Board</h1>
+    <a href="/logout" class="btn btn-info btn-lg">
+    	<span class="glyphicon glyphicon-log-out"></span> Log out
+    </a>
+	<form method="POST" action="{{ url_for('viewlist',view=1) }}">
+    	<div class="form-group">
+		    <label for="stu_list">View Students List</label>
+		    <select class="form-control" name="list_filter">
+		      <option value="alphabetic">Filter alphabetically</option>
+		      <option value="topicwise">Filter topicwise</option>
+		    </select>
+	    </div>
+	    <button type="submit" class="btn btn-primary">Viewlist</button>
+    </form>
+
+    <form  method="POST" action="{{ url_for('viewlist',view=2) }}">
+    	<div class="form-group">
+		    <label for="essay_sub">View Essay Submission</label>
+		    <select class="form-control" name="list_filter">
+		      <option value="studentwise">Filter studentwise</option>
+		      <option value="topicwise">Filter topicwise</option>
+		    </select>
+	  	</div>
+	 	<button type="submit" class="btn btn-primary">Viewlist</button>
+    </form>
+
+	<form class="form-group" method="POST" action="{{ url_for('topiclist') }}">
+		<div class="form-group">
+		    <label for="newtopic">New Topic</label>
+		    <input type="text" class="form-control" id="newtopic" name="newtopic" required="required" placeholder="topic">
+		</div>
+		<button type="submit" class="btn btn-primary">Add</button>
+	</form>
+	<div class="dropdown-divider"></div>
+	<form method="POST" action="{{ url_for('teacher') }}">
+		<button type="submit" class="btn btn-primary">Evaluate Essay</button>
+	</form>
+	
+    {% endblock %}

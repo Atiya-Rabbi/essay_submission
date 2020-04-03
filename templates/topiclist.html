@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    topiclist
+{% endblock %}
+
+{% block body %}
+	<a class="dropdown-item" href="{{ url_for('teacher') }}">Back</a>
+	<div class="dropdown-divider"></div>
+    <h1>Topic List</h1>
+    {% for alltopic in alltopics %}
+	    <ul>
+	    	<li>{{ alltopic }}</li>
+	    </ul>
+	{% endfor %}
+    
+{% endblock %}

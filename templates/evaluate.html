@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Evaluate
+{% endblock %}
+
+{% block body %}
+	<a class="dropdown-item" href="{{ url_for('teacher') }}">Back</a>
+	<div class="dropdown-divider"></div>
+	<h1>Topic List</h1>
+    {% for topic in topics %}
+	    <ul>
+	    	<li>
+	    		Topic id: {{topic.id}}<br>
+	    		Topic name: {{ topic.topic_name }}
+	    		
+	    	</li>
+	    </ul>
+	{% endfor %}
+	<h4>NOTE: While evaluating essays kindly match the topic id with topic name as mentioned above.</h4>
+    {% for essay in essays%}
+    	<div class="container p-3 my-3 border">
+    		<p>{{ essay }}</p>
+    		
+    	</div>
+    {% endfor %}
+{% endblock %}

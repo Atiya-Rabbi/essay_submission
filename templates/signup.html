@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>essay</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../static/cascadenstyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body id="bdimg">
+	<div id="topdiv1">
+		<div id="lowerdiv0">
+			<form class="px-4 py-3" method="POST" action="{{ url_for('signup') }}">
+				<div class="form-group">
+					<label for="name">Full Name</label>
+			      	<input type="text" required="required" class="form-control" name="fullname" id="fullname" placeholder="fullname">
+			    </div>
+			    <div class="form-group">
+				      <label for="username">Username</label>
+				      <input type="text" required="required" class="form-control" name="username" id="username" placeholder="bob">
+				</div>
+			    <div class="form-group">User role
+			    	<select class="form-control" name="userrole">
+			    		<option value="student">Student</option>
+			    		<option value="teacher">Teacher</option>
+			    	</select>
+			    </div>
+			    <div class="form-group">
+			      <label for="password">Password</label>
+			      <input type="password" required="required" class="form-control" name="password" id="password" placeholder="Password">
+			    </div>
+			    <div class="form-group">
+			      <label for="password">Confirm Password</label>
+			      <input type="password" required="required" class="form-control" name="repassword" id="repassword" placeholder="Password">
+			    </div>
+			    <span id='message'></span><br>
+			    <button type="submit" class="btn btn-primary" id="register">Sign up</button>
+			</form>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="login.html">Already have an id? Log in</a>
+		</div>
+	</div>
+	<script>
+		$('#password, #repassword').on('keyup', function () {
+		  if ($('#password').val() == $('#repassword').val()) {
+		    $('#message').html('Matching').css('color', 'green');
+		  } else 
+		    $('#message').html('Not Matching').css('color', 'red');
+		});
+	</script>
+
+</body>
+</html>
