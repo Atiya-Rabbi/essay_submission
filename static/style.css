@@ -1,0 +1,20 @@
+#img0{
+	width: auto;
+	height: 500px;
+}
+
+
+body{
+	background-color: #e6ce8e;
+}
+
+#bdimg{
+	background-image: url('../static/loginimg0.jpg');
+	width: auto;
+	height: 100%;
+	
+}
+
+#lowerdiv0{
+	background-color: #dbc795;
+}
